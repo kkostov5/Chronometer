@@ -5,11 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ScrollView;
+import android.widget.TabHost;
+import android.widget.TabWidget;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnStart;
     private Button btnLap;
     private Button btnStop;
+    private TabHost tabHost;
 
     private int laps;
     private Context context;
@@ -36,8 +37,32 @@ public class MainActivity extends AppCompatActivity {
         btnStart = (Button) findViewById(R.id.btn_start);
         btnLap = (Button) findViewById(R.id.btn_lap);
         btnStop = (Button) findViewById(R.id.btn_stop);
+
+        tabHost = (TabHost) findViewById(R.id.tabhost);
+        btnStop.setEnabled(false);
         context = this;
 
+        tabHost.setup();
+
+        TabHost.TabSpec spec = tabHost.newTabSpec("Alarms");
+        spec.setContent(R.id.tab1);
+        spec.setIndicator("Alarms");
+        tabHost.addTab(spec);
+
+         spec = tabHost.newTabSpec("Timer");
+        spec.setContent(R.id.tab2);
+        spec.setIndicator("Timer");
+        tabHost.addTab(spec);
+
+         spec = tabHost.newTabSpec("World Clock");
+        spec.setContent(R.id.tab3);
+        spec.setIndicator("World Clock");
+        tabHost.addTab(spec);
+
+         spec = tabHost.newTabSpec("Stopwatch");
+        spec.setContent(R.id.tab4);
+        spec.setIndicator("Stopwatch");
+        tabHost.addTab(spec);
 
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                     threadChrono.start();
                     chrono.start();
                     laps = 1;
+                    btnStop.setEnabled(true);
                 }
             }
         });
@@ -63,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                     threadChrono.interrupt();
                     threadChrono = null;
                     chrono = null;
-                    et_laps.clearComposingText();
+                    et_laps.setText("");
                 }
             }
         });

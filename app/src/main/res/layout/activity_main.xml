@@ -13,6 +13,71 @@
         android:layout_weight="12"
         android:orientation="vertical">
 
+        <TabHost
+            android:id="@+id/tabhost"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="12">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/tab1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tab2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tab3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tab4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="12"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
         <TextView
             android:id="@+id/displayTime"
             android:layout_width="match_parent"
@@ -22,6 +87,7 @@
             android:text="00:00:00:000"
             android:textAlignment="center"
             android:textSize="50sp" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -39,7 +105,7 @@
                 android:id="@+id/et_laps"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                />
+                android:textSize="20sp" />
         </ScrollView>
     </LinearLayout>
 
@@ -69,6 +135,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Stop" />
+
     </LinearLayout>
 
 </LinearLayout>
