@@ -9,7 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".OldMainActivity">
+
+        </activity>
+        <activity android:name=".WorldClockActivity" />
+        <activity android:name=".TimerActivity" />
+        <activity android:name=".AlarmActivity" />
+        <activity android:name=".StopWatchActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="chronometer.examples.krasimirkostov.com.chronometer.MainActivity">
+    tools:context="chronometer.examples.krasimirkostov.com.chronometer.OldMainActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="12"
-        android:orientation="vertical">
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TabHost
             android:id="@+id/tabhost"
@@ -70,72 +73,4 @@
         </TabHost>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="12"
-        android:orientation="vertical"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-
-        <TextView
-            android:id="@+id/displayTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/LightBlue"
-            android:ems="10"
-            android:text="00:00:00:000"
-            android:textAlignment="center"
-            android:textSize="50sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="6"
-        android:orientation="vertical">
-
-        <ScrollView
-            android:id="@+id/sv_laps"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/et_laps"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="20sp" />
-        </ScrollView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="12"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_start"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Start" />
-
-        <Button
-            android:id="@+id/btn_lap"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Lap" />
-
-        <Button
-            android:id="@+id/btn_stop"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Stop" />
-
-    </LinearLayout>
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
