@@ -1,17 +1,12 @@
 package chronometer.examples.krasimirkostov.com.chronometer;
 
-import android.app.TabActivity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.view.ViewStub;
 import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TabHost;
-import android.widget.TabWidget;
 import android.widget.TextView;
 
 
@@ -33,7 +28,7 @@ public class OldMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_mainold);
 
 
 

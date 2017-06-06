@@ -12,9 +12,6 @@
         <activity android:name=".OldMainActivity">
 
         </activity>
-        <activity android:name=".WorldClockActivity" />
-        <activity android:name=".TimerActivity" />
-        <activity android:name=".AlarmActivity" />
         <activity android:name=".StopWatchActivity" />
         <activity
             android:name=".MainActivity"

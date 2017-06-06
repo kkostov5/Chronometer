@@ -1,8 +1,7 @@
 package chronometer.examples.krasimirkostov.com.chronometer;
 
+import android.content.Context;
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -17,10 +16,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.TextView;
-
 public class MainActivity extends AppCompatActivity {
 
+    private Context context;
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -39,7 +37,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main);
+
+        context = this;
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -87,16 +87,11 @@ public class MainActivity extends AppCompatActivity {
          * The fragment argument representing the section number for this
          * fragment.
          */
-        private int position;
         private static final String ARG_SECTION_NUMBER = "section_number";
 
         public PlaceholderFragment()
         {
 
-        }
-
-        public PlaceholderFragment(int position) {
-            this.position = position;
         }
 
         /**
@@ -119,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
             switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
                 case 0:
                     rootView = inflater.inflate(R.layout.activity_alarm, container, false);
+
                     break;
                 case 1:
                     rootView = inflater.inflate(R.layout.activity_timer, container, false);
@@ -128,9 +124,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 3:
                     rootView = inflater.inflate(R.layout.activity_stop_watch, container, false);
+                    //StopWatch stopWatch = new StopWatch(context,rootView);
                     break;
             }
-//            View rootView = inflater.inflate(R.layout.fragment_main2, container, false);
+//            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 //            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
 //            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;

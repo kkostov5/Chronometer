@@ -43,7 +43,7 @@ public class Chronometer implements Runnable {
             int hours = (int) ((since / MILIS_TO_HOURS) % 24);
             int milis = (int) (since % 1000);
 
-           // ((StopWatchActivity)context).updateTimerText(String.format("%02d:%02d:%02d:%03d",hours,minutes,seconds,milis));
+            ((StopWatchActivity)context).updateTimerText(String.format("%02d:%02d:%02d:%03d",hours,minutes,seconds,milis));
 
             try
             {
